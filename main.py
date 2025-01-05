@@ -38,7 +38,7 @@ class BotDiscordForAuth:
         @self.bot.command()
         async def validarUsuario(ctx, value):
             token = open('token_notion.txt', 'r')
-            token_notion = token
+            token_notion = token.read()
             db_id = '15fea55528f780619da5f8c34abd3031'
             valid = validation.FuncionsValidation(token_notion, db_id).UserValidation(value)
             user = ctx.author
