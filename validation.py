@@ -48,7 +48,4 @@ class FuncionsValidation:
 
 if __name__ == '__main__':
 
-    # token = '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'
-    # fv = FuncionsValidation(token, '15fea55528f780619da5f8c34abd3031')
-    # res = fv.UserValidation('leofs5566@gmail.com')
     ...

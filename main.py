@@ -37,8 +37,8 @@ class BotDiscordForAuth:
 
         @self.bot.command()
         async def validarUsuario(ctx, value):
-
-            token_notion = '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'
+            token = open('token_notion.txt', 'r')
+            token_notion = token
             db_id = '15fea55528f780619da5f8c34abd3031'
             valid = validation.FuncionsValidation(token_notion, db_id).UserValidation(value)
             user = ctx.author
@@ -54,8 +54,11 @@ class BotDiscordForAuth:
             
         
     def runBot(self):
-
-        self.bot.run("MTMxODAwNjc0MzA2MTYzMTA1Nw.GyT0TQ.Mg2U_2Y5VcoB8XOUgXiZch7WGNaZrtpf_y4ERc")
+        try:
+            token = open('token_discord.txt', 'r')
+            self.bot.run(token.read())
+        except FileExistsError:
+            ...
         return None
         
         
